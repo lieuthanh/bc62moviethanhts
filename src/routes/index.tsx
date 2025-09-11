@@ -7,12 +7,13 @@ import AboutPage from "../pages/HomeTemplate/AboutPage";
 import HomePage from "../pages/HomeTemplate/HomePage";
 import ListMoviePage from "../pages/HomeTemplate/ListMoviePage";
 import HomeTemplate from "../pages/HomeTemplate";
+import HooksPage from "../pages/HomeTemplate/HooksPage";
 
 type TRoute = {
-    path: string,
-    element: any,
-    nested?: TRoute[],
-}
+    path: string;
+    element: any;
+    nested?: TRoute[];
+};
 const routes: TRoute[] = [
     {
         path: "",
@@ -20,8 +21,9 @@ const routes: TRoute[] = [
         nested: [
             { path: "", element: HomePage },
             { path: "about", element: AboutPage },
-            { path: "list-movie", element: ListMoviePage }
-        ]
+            { path: "list-movie", element: ListMoviePage },
+            { path: "hooks", element: HooksPage },
+        ],
     },
     {
         path: "admin",
@@ -31,7 +33,9 @@ const routes: TRoute[] = [
             { path: "add-user", element: AddUserPage }
         ]
     },
-    { path: "auth", element: AuthenPage, }
+    {
+        path: "auth", element: AuthenPage,
+    },
 ];
 
 const renderRoutes = () => {
