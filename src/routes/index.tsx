@@ -8,6 +8,7 @@ import HomePage from "../pages/HomeTemplate/HomePage";
 import ListMoviePage from "../pages/HomeTemplate/ListMoviePage";
 import HomeTemplate from "../pages/HomeTemplate";
 import HooksPage from "../pages/HomeTemplate/HooksPage";
+import DetailMovie from "../pages/HomeTemplate/DetailMovie";
 
 type TRoute = {
     path: string;
@@ -23,6 +24,7 @@ const routes: TRoute[] = [
             { path: "about", element: AboutPage },
             { path: "list-movie", element: ListMoviePage },
             { path: "hooks", element: HooksPage },
+            { path: "detail/:id", element: DetailMovie },
         ],
     },
     {
