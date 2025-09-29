@@ -24,15 +24,6 @@ export default function AuthenPage() {
         resolver: yupResolver(schema),
     });
 
-    // const [values, setValues] = useState({ taikhoan: "", matkhau: "" });
-    // const handleOnChange = (event: any) => {
-    //     const { value, name } = event.target;
-    //     setValues({ ...values, [name]: value });
-    // };
-
-    useEffect(() => {
-        console.log("errors", formState.errors);
-    }, [formState]);
     const onSubmit = (formValues: any) => {
         dispatch(actFetchUserLogin(formValues));
     }
