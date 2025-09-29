@@ -1,24 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { actFetchMovieDetails } from "./duck/actions";
-import { RootState } from "../../../store";
 import dayjs from "dayjs";
 import { Button, Col, Nav, Row, Tab } from "react-bootstrap";
+import { useMovieDetails } from "../../../hooks/useMovieDetails";
 
 export default function DetailMovie() {
     const { id } = useParams();
-    const dispatch: any = useDispatch();
-    const { data, loading, error } = useSelector((state: RootState) => state.movieDetailsReducer);
+    const { data, loading, error } = useMovieDetails(id || "");
     const date = new Date(data?.ngayKhoiChieu || "");
     const cinemaSystems = data?.heThongRapChieu || [];
-
-    useEffect(() => {
-        console.log("id", id);
-        if (id) {
-            dispatch(actFetchMovieDetails(id));
-        }
-    }, [id]);
 
     if (loading) return <p>Loading...</p>;
 
@@ -51,7 +40,7 @@ export default function DetailMovie() {
                                 return (
                                     <Nav.Item>
                                         <Nav.Link eventKey={system.maHeThongRap}>
-                                            <img src={system.logo} style={{ width: 120, height: 120 }} />
+                                            <img src={system.logo} className="w-25 h-25" alt="logo" />
                                         </Nav.Link>
                                     </Nav.Item>
                                 )

@@ -24,7 +24,7 @@ export default function ListMoviePage() {
 
   return (
     <div className="container">
-      <h3>ListMoviePage</h3>
+      <h3>ListMoviePage Thanh 6</h3>
       <div className="row">
         {renderListMovie()}
       </div>

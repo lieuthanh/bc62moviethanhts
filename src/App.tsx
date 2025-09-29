@@ -1,8 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import renderRoutes from './routes';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    localStorage.removeItem('movieDetails');
+  }, []);
   return <BrowserRouter>
     <Routes>
       {renderRoutes()};

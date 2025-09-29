@@ -1,10 +1,11 @@
 import { Action, AppStateDetails } from "../../../../store/types";
 import * as ActionType from "../duck/constants";
 import { MovieDetails } from "./types";
+import { loadMovieDetailsFromLocalStorage } from "../../../../store/localStorage";
 
 const initialState: AppStateDetails<MovieDetails> = {
   loading: false,
-  data: null,
+  data: loadMovieDetailsFromLocalStorage(),
   error: null,
 };
 
